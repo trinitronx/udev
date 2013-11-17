@@ -34,4 +34,5 @@ template "/etc/udev/rules.d/70-persistent-net.rules" do
   mode "0644"
   owner "root"
   group "root"
+  force_unlink true
 end
