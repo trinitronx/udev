@@ -10,6 +10,9 @@ platforms:
   - name: centos-6.4
 
 suites:
-  - name: default
-    run_list:
+  - name: net-attributes
+    run_list: recipe[udev::net]
     attributes:
+      udev:
+        net:
+          eth0: 08:00:27:f9:09:1f

@@ -5,6 +5,8 @@ group :test do
   gem 'strainer', '>= 3.3.0'
   gem 'berkshelf'
   gem 'foodcritic', '~> 3.0.0'
-  gem 'test-kitchen'
+  gem 'test-kitchen', '>= 1.0.0.beta.4'
   gem 'kitchen-vagrant'
+  gem 'kitchen-docker'
+  gem 'serverspec'
 end

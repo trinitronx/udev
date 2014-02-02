@@ -17,9 +17,16 @@
 # limitations under the License.
 #
 
+def chef_solo_search_installed?
+  klass = ::Search::const_get('Helper')
+  return klass.is_a?(Class)
+rescue NameError
+  return false
+end
+
 #search for any apt-cacher-ng caching proxies
-if Chef::Config[:solo]
-  Chef::Log.warn("This recipe attempts to use search with data bags. Chef Solo does not support this.")
+if Chef::Config[:solo] and not chef_solo_search_installed?
+  Chef::Log.warn("This recipe attempts to use search with data bags. Chef Solo does not support this unless you install the chef-solo-search cookbook.")
 else
   begin
     udev_net = data_bag_item('udev', node.hostname)
