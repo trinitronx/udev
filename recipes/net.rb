@@ -29,10 +29,10 @@ if Chef::Config[:solo] and not chef_solo_search_installed?
   Chef::Log.warn("This recipe attempts to use search with data bags. Chef Solo does not support this unless you install the chef-solo-search cookbook.")
 else
   begin
-    udev_net = data_bag_item('udev', node.hostname)
+    udev_net = data_bag_item('udev', node['hostname'])
     node['udev']['net'] = udev_net['net'] if udev_net
   rescue
-    Chef::Log.info "no 'udev' data bag entry for '#{node.hostname}' found."
+    Chef::Log.info "no 'udev' data bag entry for '#{node['hostname']}' found."
   end
 end
 
