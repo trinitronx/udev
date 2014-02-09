@@ -1,3 +1,4 @@
+name             "udev"
 maintainer       "Opscode, Inc."
 maintainer_email "matt@opscode.com"
 license          "Apache 2.0"
