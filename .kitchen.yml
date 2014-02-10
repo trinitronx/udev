@@ -1,6 +1,7 @@
 ---
 driver:
   name: vagrant
+  vm_hostname: kitchen
 
 provisioner:
   name: chef_solo

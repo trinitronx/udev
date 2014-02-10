@@ -6,7 +6,7 @@ group :test do
   gem 'berkshelf'
   gem 'foodcritic', '~> 3.0.0'
   gem 'test-kitchen', '>= 1.0.0.beta.4'
-  gem 'kitchen-vagrant'
+  gem 'kitchen-vagrant', '>= 0.14.0'
   gem 'kitchen-docker'
   gem 'serverspec'
 end
