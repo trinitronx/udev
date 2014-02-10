@@ -16,3 +16,6 @@ suites:
       udev:
         net:
           eth0: 08:00:27:f9:09:1f
+  - name: net-data-bags
+    run_list: recipe[udev::net]
+    data_bag_path: "test/integration/net-data-bags/data_bags"
