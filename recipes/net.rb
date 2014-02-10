@@ -30,7 +30,7 @@ if Chef::Config[:solo] and not chef_solo_search_installed?
 else
   begin
     udev_net = data_bag_item('udev', node['hostname'])
-    node['udev']['net'] = udev_net['net'] if udev_net
+    node.default['udev']['net'] = udev_net['net'] if udev_net
   rescue
     Chef::Log.info "no 'udev' data bag entry for '#{node['hostname']}' found."
   end
@@ -41,4 +41,5 @@ template "/etc/udev/rules.d/70-persistent-net.rules" do
   mode "0644"
   owner "root"
   group "root"
+  force_unlink true
 end
